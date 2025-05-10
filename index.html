@@ -285,8 +285,22 @@
       return transposed;
     }
 
+    function validateExcelData(data) {
+      for (let row = 0; row < data.length; row++) {
+        for (let col = 0; col < data[row].length; col++) {
+          const cell = data[row][col].trim();
+          if (cell === '') {
+            alert(`Empty cell found at row ${row + 1}, column ${col + 1}. Please fill all cells.`);
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
     function compareTables() {
       const raw1 = parseExcelText(document.getElementById('input1').value);
+      if (!validateExcelData(raw1)) return;
       const raw2 = parseExcelText(document.getElementById('input2').value);
       const values = getManipulationValues();
       if (!values) return;
