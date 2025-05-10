@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Table Compare Tool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <h1>Table Compare Tool - Thu Huong KCS</h1>
+
+  <div class="section input-grid">
+    <div>
+      <label><strong>Paste Table 1 (Excel):</strong></label>
+      <textarea id="input1" placeholder="Paste Table 1 from Excel" oninput="updateManipulationInputs()"></textarea>
+    </div>
+    <div>
+      <label><strong>Paste Table 2 (Word):</strong></label>
+      <textarea id="input2" placeholder="Paste Table 2 from Word"></textarea>
+    </div>
+  </div>
+
+  <div class="section">
+    <strong>LSD Values (Per Column):</strong>
+    <div class="manipulation-inputs" id="manipulationInputs"></div>
+  </div>
+
+  <div class="section">
+    <button class="compare" onclick="compareTables()">Compare</button>
+    <button onclick="clearAll()">Clear</button>
+  </div>
+
+  <div class="table-container">
+    <div id="table1"></div>
+    <div id="table2"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
